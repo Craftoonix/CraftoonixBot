@@ -14,6 +14,10 @@ client.on('message', message => {
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
 
+// say command
+  if (args[1]) message.channel.sendMessage(fortunes[Math.floor(Math.random() * fortunes.length)]);
+            else message.channel.sendMessage(":no_entry_sign: Can't read that.");
+
 // clear command
 if (command === "clear") {
     async function purge() {
